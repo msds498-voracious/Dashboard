@@ -22,6 +22,7 @@ To view the dashboard:
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_table
 from dash.dependencies import Input, Output
 import base64
 import numpy as np
@@ -57,6 +58,8 @@ five_yrs_ago=five_yrs_ago.strftime('%Y-%m-%d')
 yr=int(five_yrs_ago[0:4])
 mo=int(five_yrs_ago[5:7])
 dy=int(five_yrs_ago[8:10])
+
+top_handles = pd.read_csv('https://raw.githubusercontent.com/msds498-voracious/Dashboard/master/top_names_df.csv')
 
 # =============================================================================
 # Create the Layout
@@ -195,6 +198,7 @@ def generate_table(selected_dropdown_value,max_rows=10):
     tweetdf = getrawtweets(selected_dropdown_value)
     tweetdf['Sentiment'] = np.round(tweetdf['Sentiment'],2)
     
+    
     # Header
     return html.Table([html.Tr([html.Th(col) for col in tweetdf.columns])] + [html.Tr([
         html.Td(tweetdf.iloc[i][col]) for col in tweetdf.columns
@@ -207,4 +211,3 @@ def generate_table(selected_dropdown_value,max_rows=10):
             
 if __name__ == '__main__':
     app.run_server(debug=True)
-   
