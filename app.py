@@ -59,8 +59,6 @@ yr=int(five_yrs_ago[0:4])
 mo=int(five_yrs_ago[5:7])
 dy=int(five_yrs_ago[8:10])
 
-top_handles = pd.read_csv('https://raw.githubusercontent.com/msds498-voracious/Dashboard/master/top_names_df.csv')
-
 # =============================================================================
 # Create the Layout
 # =============================================================================
