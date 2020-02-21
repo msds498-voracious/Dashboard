@@ -4,3 +4,4 @@ dash-core-components==1.7.0
 dash-html-components==1.0.2
 numpy==1.16.2
 gunicorn==20.0.0
+yahoo-historical==0.3.2
