@@ -47,7 +47,8 @@ from datetime import date
 # =============================================================================
 
 # Paremeters used in pulling tweet data.
-half = relativedelta(months=6) #Currently set at 6 months ago to current day
+#half = relativedelta(months=6) #Currently set at 6 months ago to current day
+half = relativedelta(months=9) #Currently set at 9 months ago to current day to align with Phase I deliverable
 today = pd.Timestamp.today()
 six_mo_ago = today - half
 
